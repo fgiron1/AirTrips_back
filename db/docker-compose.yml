@@ -1,0 +1,25 @@
+version: "3"
+services:
+  db_flight:
+    image: postgres
+    environment:
+      - POSTGRES_USER=root_flight
+      - POSTGRES_PASSWORD=root_flight
+      - POSTGRES_DB=postgres_flight
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata_flight:/var/lib/postgresql/data
+  db_metrics:
+    image: postgres
+    environment:
+      - POSTGRES_USER=root_metrics
+      - POSTGRES_PASSWORD=root_metrics
+      - POSTGRES_DB=postgres_metrics
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata_metrics:/var/lib/postgresql/data
+volumes:
+  pgdata_flight:
+  pgdata_metrics:
