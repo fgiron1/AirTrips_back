@@ -1,5 +1,15 @@
 CREATE DATABASE db_flight with template = template0 ENCODING 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8';
 
+CREATE ROLE api LOGIN
+PASSWORD 'api_password'
+
+REVOKE ALL PRIVILEGES ON 
+ALL TABLES IN SCHEMA public
+FROM api
+
+GRANT SELECT ON A TO api
+
+
 create table Customers (
 
 	id uuid default gen_random_uuid() primary key not null,
