@@ -19,8 +19,8 @@ import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 
-@SpringBootApplication
 @RestController
+@SpringBootApplication
 public class GatewayApplication {
 
 	public static void main(String[] args) {
@@ -32,27 +32,14 @@ public class GatewayApplication {
 		return builder.routes()
 				// Circuit breakers specified for each microservice in any version of the API.
 				.route(p -> p
-						.path("/api/**")
-						.filters(f -> f.circuitBreaker(config -> config
-										.setName("global_flights")
-										.setFallbackUri("forward:/fallback")))
-						.uri("http://localhost:8081"))
-				.route(p -> p
-						.path("/api/**")
-						.filters(f -> f.circuitBreaker(config -> config
-								.setName("global_prices")
-								.setFallbackUri("forward:/fallback")))
+						.path("/api/v1/price")
+						.filters(f ->
+								f.circuitBreaker(config -> config
+										.setName("price_cb")
+										.setFallbackUri("forward:/fallback"))
+								)
 						.uri("http://localhost:8082"))
-				.route(p -> p
-						.path("/api/**")
-						.filters(f -> f.circuitBreaker(config -> config
-								.setName("global_metrics")
-								.setFallbackUri("forward:/fallback")))
-						.uri("http://localhost:8083"))
-				// FLIGHT MICROSERVICE
-				.route(p -> p
-						.path("api/v1/**")
-						.uri("http://localhost:8081"))
+
 				.build();
 
 	}
@@ -60,12 +47,16 @@ public class GatewayApplication {
 	@Bean
 	public Customizer<ReactiveResilience4JCircuitBreakerFactory> defaultCustomizer() {
 		return factory -> factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
-				.circuitBreakerConfig(CircuitBreakerConfig.ofDefaults())
+				.circuitBreakerConfig(CircuitBreakerConfig.custom()
+						.failureRateThreshold(50)
+						.slidingWindowSize(10)
+						.minimumNumberOfCalls(2)
+						.build())
 				.timeLimiterConfig(TimeLimiterConfig.custom().timeoutDuration(Duration.ofSeconds(4)).build()).build());
 	}
 
 	@RequestMapping("/fallback")
 	public Mono<String> fallback(){
-		return Mono.just("Too many requests!");
+		return Mono.just("Too many erroneous requests!");
 	}
 }
