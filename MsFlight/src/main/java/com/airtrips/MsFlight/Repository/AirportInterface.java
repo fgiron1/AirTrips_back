@@ -9,4 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface AirportInterface extends JpaRepository<Airport, UUID> {
+
 }

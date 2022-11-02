@@ -37,6 +37,8 @@ public class Flight implements Serializable {
     @Column(nullable = false)
     private Instant departureDate;
     @Column(nullable = false)
+    private Instant arrivalDate;
+    @Column(nullable = false)
     private Double distance;
     @Column(nullable = false)
     private Integer maxCapacity;
