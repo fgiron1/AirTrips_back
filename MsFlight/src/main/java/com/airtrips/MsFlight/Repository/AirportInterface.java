@@ -8,6 +8,5 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface AirportInterface extends JpaRepository<UUID, Airport> {
-    List<Airport> findByCountryName(String country);
+public interface AirportInterface extends JpaRepository<Airport, UUID> {
 }

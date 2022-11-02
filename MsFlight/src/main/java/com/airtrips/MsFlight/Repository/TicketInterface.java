@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface TicketInterface extends JpaRepository<UUID, Ticket> {
+public interface TicketInterface extends JpaRepository<Ticket, UUID> {
 
 }
