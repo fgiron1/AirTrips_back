@@ -1,7 +1,7 @@
 1. Install docker desktop + docker-compose CLI
 2. Run the following command:
 
-docker-compose up -d
+docker-compose up --no-recreate -d
 
 This will create two containers: a persistent volume for each database service, install postgres image, and expose
 the database services in different ports.
@@ -10,8 +10,8 @@ the database services in different ports.
     Name: db_flight
     Container name: db_flight
     Exposed port: 5433
-    API User: 
-    API Password: 
+    API User: api
+    API Password: api_password 
 
 METRICS SERVICE'S DATABASE
     Name: db_metrics
