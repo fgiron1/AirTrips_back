@@ -34,7 +34,7 @@ public class Customer implements Serializable {
     @Column(nullable = false)
     private String id_number;
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, orphanRemoval = false)
-    private List<Ticket> ticketList = new ArrayList<>();
+    @OneToMany(mappedBy = "customerId", fetch = FetchType.LAZY)
+    private List<Ticket> ticketList;
 
 }

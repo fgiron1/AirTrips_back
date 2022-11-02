@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.AllArgsConstructor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -30,11 +29,11 @@ public class Airport implements Serializable {
     @Column(nullable = false)
     private String city;
 
-    @OneToMany(mappedBy = "airport", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "originId", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Flight> originList;
 
-    @OneToMany(mappedBy = "airport", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "destinationId", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Flight> destinationList;
 

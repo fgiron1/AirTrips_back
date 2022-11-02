@@ -23,21 +23,21 @@ public class Ticket implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private UUID id;
-    @Column(nullable = false)
-    private UUID customer_id;
-    @Column(nullable = false)
-    private UUID flight_id;
+//    @Column(nullable = false)
+//    private UUID customerId;
+//    @Column(nullable = false)
+//    private UUID flightId;
     @Column(nullable = false)
     private DecimalFormat price;
     @Column(nullable = false)
-    private boolean has_luggage;
+    private boolean hasLuggage;
 
     @ManyToOne
     @JoinColumn(name="customer_id", nullable=false)
-    private Customer customer;
+    private Customer customerId;
 
     @ManyToOne
     @JoinColumn(name = "flight_id", nullable = false)
-    private Flight flight;
+    private Flight flightId;
 
 }

@@ -39,20 +39,20 @@ public class Flight implements Serializable {
     @Column(nullable = false)
     private Double distance;
     @Column(nullable = false)
-    private Integer max_capacity;
+    private Integer maxCapacity;
     @Column(nullable = false)
-    private Integer actual_capacity;
+    private Integer actualCapacity;
 
-    @OneToMany(mappedBy = "Flight", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "flightId", fetch = FetchType.LAZY)
     private List<Ticket> ticketList;
 
     @ManyToOne
     @JoinColumn(name = "origin_id", nullable = false)
-    private Airport origin;
+    private Airport originId;
 
     @ManyToOne
     @JoinColumn(name = "destination_id", nullable = false)
-    private Airport destination;
+    private Airport destinationId;
 
 
 }
