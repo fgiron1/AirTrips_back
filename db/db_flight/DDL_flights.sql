@@ -87,9 +87,70 @@ begin
 	return query
 	select * from flights f
 	where date(f.departure_date) = date(desired_date)
-		  and origin_id = origin
-		  and destination_id = destination;
+		  and f.origin_id = origin
+		  and f.destination_id = destination;
 end; $$
+
+
+create or replace function find_flights_by_1_layover
+(
+	origin uuid,
+	destination uuid
+)
+returns table (
+	id uuid,
+	origin_id uuid,
+	destination_id uuid,
+	layover_id uuid,
+	airline_name varchar(50),
+	departure_date timestamptz,
+	arrival_date timestamptz,
+	distance numeric,
+	max_capacity int4,
+	actual_capacity int4
+)
+language plpgsql as 
+$$
+begin 
+return query
+	select * from flights
+	where layover_id is not null
+end; $$
+
+
+create or replace function find_flights_by_2_layover
+(
+	origin uuid,
+	destination uuid
+)
+returns table (
+	id uuid,
+	origin_id uuid,
+	destination_id uuid,
+	layover_id uuid,
+	airline_name varchar(50),
+	departure_date timestamptz,
+	arrival_date timestamptz,
+	distance numeric,
+	max_capacity int4,
+	actual_capacity int4
+)
+language plpgsql as 
+$$
+begin 
+return query
+	select * from flights f
+	inner join
+	(select * from flights
+	where layover_id is not null and
+		  origin_id = origin and
+		  destination_id = destination) sub1
+	on f.id = sub1.layover_id
+	where f.layover_id is not null and
+			origin_id = origin and
+		  	destination_id = destination
+end; $$
+
 
 // 1. Reservas tu vuelo
 // 2. Pones tus datos
