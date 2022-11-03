@@ -2,11 +2,12 @@ package com.airtrips.MsFlight.Services;
 
 import com.airtrips.MsFlight.Models.Airport;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
-@Component
+@Service
 public class AirportService {
     private AirportService repository;
     public List<Airport> getAllAirports() {

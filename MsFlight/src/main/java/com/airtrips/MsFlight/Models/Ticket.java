@@ -6,7 +6,6 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.UUID;
 
-
 @Entity
 @Table(name = "tickets")
 public class Ticket implements Serializable {

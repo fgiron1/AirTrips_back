@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 
@@ -13,11 +14,11 @@ import java.util.stream.Stream;
 public interface FlightRepository extends JpaRepository<Flight, UUID> {
 
     @Query(value="SELECT * FROM flights WHERE airline=:airline", nativeQuery = true)
-    Stream<Flight> filterByAirLine(String airline);
+    Stream<List<Flight>> filterByAirLine(String airline);
 
-    @Query(value ="SELECT * FROM flights WHERE layover=:layoverNumber", nativeQuery = true)
-    Stream<Flight> filterByScales(int layoverNumber);
+    @Query(value ="SELECT * FROM find_flights_by_layover(:layoverNumber, :origin, :destination)", nativeQuery = true)
+    Stream<List<Flight>> filterByLayovers(int layoverNumber, UUID origin, UUID destination);
 
-    @Query(value ="SELECT * FROM flights WHERE departureDate=:flightDepartureDate", nativeQuery = true)
-    Stream<Flight> filterByDepartureDates(Instant flightDepartureDate);
+    @Query(value ="SELECT * FROM find_flights_by_date(:flightDepartureDate, :origin, :destination)", nativeQuery = true)
+    Stream<List<Flight>> filterByDateAndOrigin(Instant flightDepartureDate, UUID origin, UUID destination);
 }
