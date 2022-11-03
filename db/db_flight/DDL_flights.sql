@@ -58,6 +58,38 @@ grant insert, update, select on Tickets to api;
 grant select on Airports to api;
 grant select, insert, update on Flights to api;
 
+------------------------------
+-- FUNCTIONS AND PROCEDURES --
+------------------------------
+
+create or replace function find_flights_by_date
+(
+	desired_date timestamptz,
+	origin uuid,
+	destination uuid
+)
+
+returns table (
+	id uuid,
+	origin_id uuid,
+	destination_id uuid,
+	layover_id uuid,
+	airline_name varchar(50),
+	departure_date timestamptz,
+	arrival_date timestamptz,
+	distance numeric,
+	max_capacity int4,
+	actual_capacity int4
+)
+language plpgsql
+as $$
+begin
+	return query
+	select * from flights f
+	where date(f.departure_date) = date(desired_date)
+		  and origin_id = origin
+		  and destination_id = destination;
+end; $$
 
 // 1. Reservas tu vuelo
 // 2. Pones tus datos
