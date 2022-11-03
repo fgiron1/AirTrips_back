@@ -1,7 +1,7 @@
 package com.airtrips.MsFlight;
 
-import com.airtrips.MsFlight.models.Customer;
-import com.airtrips.MsFlight.models.Ticket;
+import com.airtrips.MsFlight.Models.Customer;
+import com.airtrips.MsFlight.Models.Ticket;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +19,7 @@ public class CustomerServiceTests {
     private static Customer INVALID_CUSTOMER = new Customer(null, null, null, null, null, null);
 
     @Test
-    GetAllCustomers_WorkAsExpected_WhenCalled() {
+    void GetAllCustomers_WorkAsExpected_WhenCalled() {
         List<Customer> customers = service.getAllCustomers();
 
         Assert.notEmpty(customers, "Returned list of customer is not empty");

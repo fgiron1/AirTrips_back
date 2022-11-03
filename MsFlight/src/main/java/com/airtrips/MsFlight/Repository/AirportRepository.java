@@ -1,6 +1,6 @@
 package com.airtrips.MsFlight.Repository;
 
-import com.airtrips.MsFlight.models.Airport;
+import com.airtrips.MsFlight.Models.Airport;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
