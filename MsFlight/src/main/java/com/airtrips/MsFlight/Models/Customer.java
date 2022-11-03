@@ -27,6 +27,7 @@ public class Customer implements Serializable {
     @OneToMany(mappedBy = "customerId", fetch = FetchType.LAZY)
     private List<Ticket> ticketList;
 
+    public Customer(){}
     public Customer(UUID id, String first_name, String last_name, Integer age, String nacionality, String id_number, List<Ticket> ticketList) {
         this.id = id;
         this.first_name = first_name;

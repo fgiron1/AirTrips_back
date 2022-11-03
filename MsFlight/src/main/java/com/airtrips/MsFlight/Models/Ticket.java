@@ -27,6 +27,7 @@ public class Ticket implements Serializable {
     @JoinColumn(name = "flight_id", nullable = false)
     private Flight flightId;
 
+    public Ticket(){}
     public Ticket(UUID id, DecimalFormat price, boolean hasLuggage, Customer customerId, Flight flightId) {
         this.id = id;
         this.price = price;

@@ -31,9 +31,12 @@ public class FlightService {
         return repo.filterByDateAndOrigin(date, origin, destination).iterator().next();
     }
 
-    public List<Flight>
     public Flight findFlightById(UUID id){
         return repo.findById(id).get();
+    }
+
+    public List<Flight> findAllFlights(){
+        return repo.findAll();
     }
 
 

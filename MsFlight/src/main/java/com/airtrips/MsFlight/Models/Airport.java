@@ -30,6 +30,7 @@ public class Airport implements Serializable {
     @JsonIgnore
     private List<Flight> destinationList;
 
+    public Airport(){}
     public Airport(UUID id, String name, String country, String city, List<Flight> originList, List<Flight> destinationList) {
         this.id = id;
         this.name = name;

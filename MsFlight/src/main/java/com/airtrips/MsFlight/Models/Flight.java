@@ -48,6 +48,7 @@ public class Flight implements Serializable {
     @OneToMany(mappedBy = "layoverId", fetch = FetchType.LAZY)
     private List<Flight> layoverList;
 
+    public Flight(){}
 
     public Flight(UUID id, Airport originId, Airport destinationId, Flight layoverId, String airLine, Instant departureDate, Instant arrivalDate, Double distance, Integer maxCapacity, Integer actualCapacity, List<Ticket> ticketList, List<Flight> layoverList) {
         this.id = id;
