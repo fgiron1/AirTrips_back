@@ -1,6 +1,8 @@
 package com.airtrips.MsFlight;
 
-import com.airtrips.MsFlight.models.Airport;
+import com.airtrips.MsFlight.Services.AirportService;
+import com.airtrips.MsFlight.Models.Airport;
+import com.airtrips.MsFlight.Services.AirportService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +22,7 @@ public class AirportServiceTests {
 
     @Test
     void GetAllAirports_WorkAsExpected_WhenCalled() {
-        List<Airport> airportList = serive.getAllAirports();
+        List<Airport> airportList = service.getAllAirports();
 
         Assert.notEmpty(airportList, "Assert that the returned list is not empty");
     }
@@ -43,14 +45,14 @@ public class AirportServiceTests {
 
     @Test
     void GetAirportByCountry_ReturnsAllAirportsFromGivenCountry_WhenCalled() {
-        List<Airport> airports = service.getAllAirports("China");
+        List<Airport> airports = service.getAllAirportsByCountry("China");
 
         Assert.notEmpty(airports, "The returned list of airports is not empty when using existing country");
     }
 
     @Test
     void GetAirportByCountry_ReturnsAnEmptyList_WhenUsingNonExistingCountry() {
-        List<Airport> airports = service.getAllAirports("");
+        List<Airport> airports = service.getAllAirportsByCountry("");
 
         Assert.isTrue(airports.size() == 0, "The returned list of airports is empty when using non existing country");
     }

@@ -1,11 +1,7 @@
-package com.airtrips.MsFlight.models;
+package com.airtrips.MsFlight.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Getter;
-import lombok.AllArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;

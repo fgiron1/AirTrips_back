@@ -1,6 +1,6 @@
 package com.airtrips.MsFlight.Repository;
 
-import com.airtrips.MsFlight.models.Flight;
+import com.airtrips.MsFlight.Models.Flight;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -19,5 +19,5 @@ public interface FlightRepository extends JpaRepository<Flight, UUID> {
     Stream<Flight> filterByScales(int layoverNumber);
 
     @Query(value ="SELECT * FROM flights WHERE departureDate=:flightDepartureDate", nativeQuery = true)
-    Stream<Flight> getFligths(Instant flightDepartureDate);
+    Stream<Flight> filterByDepartureDates(Instant flightDepartureDate);
 }
