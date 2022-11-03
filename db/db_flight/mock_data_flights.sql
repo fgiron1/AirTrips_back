@@ -240,13 +240,12 @@ INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,
 	 ('1b3e2b27-44b9-4216-b23a-a74d0f200bf8','05e2ccbb-4667-4f7e-bb0f-8133095b829b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Lacinia Sed Associates','2018-05-24 15:05:15+02','2020-12-21 18:39:34+01',1299,70,23),
 	 ('e7a641ad-eb07-4e24-a962-f9152149fe10','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Ut Pharetra Associates','2018-08-21 02:01:20+02','2020-10-21 01:05:54+02',4737,60,43),
 	 ('71dc6ead-b590-45b1-aa00-c0cd88879b79','97866abe-667f-4b43-99bf-b7fc264a468b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Pede Corp.','2021-03-09 17:50:14+01','2021-11-06 01:02:47+01',6728,70,18),
-	 ('99d1ac55-3c05-42d0-83fb-32a5a701dc1b','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Nonummy Ultricies Ornare Institute','2020-09-27 18:44:57+02','2020-11-07 18:01:23+01',5123,60,26),
 	 ('765ddcec-c68d-4f2e-b843-9a70edbc6177','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Phasellus Dapibus Limited','2021-06-26 14:04:26+02','2022-07-15 03:17:50+02',8928,60,19),
 	 ('51808afe-b648-4eb3-8fdb-cfd36d7af947','05e2ccbb-4667-4f7e-bb0f-8133095b829b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Iaculis Quis Pede Foundation','2018-10-20 07:38:30+02','2022-08-22 02:09:56+02',7103,80,8),
 	 ('8f1291da-0103-4712-8cd0-6fa5d1d8238b','97866abe-667f-4b43-99bf-b7fc264a468b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Urna Vivamus Corporation','2021-05-09 23:52:35+02','2021-07-23 23:32:06+02',2304,60,37),
-	 ('63e81ffe-ad62-4562-970f-aac68556a645','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Purus Ltd','2018-07-14 06:53:02+02','2021-09-06 00:17:11+02',3031,80,16);
+	 ('63e81ffe-ad62-4562-970f-aac68556a645','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Purus Ltd','2018-07-14 06:53:02+02','2021-09-06 00:17:11+02',3031,80,16),
+	 ('633f5040-9d9f-43fe-9358-505d03248fc7','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Varius Corporation','2017-04-29 19:30:58+02','2020-05-02 06:15:27+02',8315,60,55);
 INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
-	 ('633f5040-9d9f-43fe-9358-505d03248fc7','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Varius Corporation','2017-04-29 19:30:58+02','2020-05-02 06:15:27+02',8315,60,55),
 	 ('78866e39-8647-4992-b12c-9245a1b68001','0a8d350f-a740-43e5-aea9-3417b7e4a49f','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Suspendisse Sed Corporation','2017-07-25 13:11:33+02','2021-03-01 04:24:28+01',3686,80,38),
 	 ('7729c4a9-d8e1-452c-818f-814db33046b9','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Urna Justo Associates','2018-07-04 12:53:11+02','2020-08-14 00:28:47+02',8360,70,33),
 	 ('9248c88b-f01b-493f-b41f-b613d3b19653','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Sed Limited','2017-02-28 05:37:35+01','2020-12-21 01:13:29+01',5424,60,43),
@@ -255,9 +254,9 @@ INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,
 	 ('4a430abd-8bb6-4b3b-b89a-02aab9f8e317','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Et Rutrum LLC','2021-06-10 23:31:22+02','2022-09-20 18:15:29+02',7209,70,16),
 	 ('46c103c4-6602-4f66-aff8-ee08de8a5771','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Nec Corporation','2021-09-01 18:38:47+02','2021-12-15 03:08:23+01',3475,70,58),
 	 ('3d63a5a6-9f5c-45c7-85a6-f0ca9a393881','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Erat Etiam Vestibulum Foundation','2018-02-11 21:21:00+01','2020-06-23 07:35:27+02',1600,70,4),
-	 ('e0300a60-ffc1-407b-832c-249e5c50a83b','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Arcu Vivamus Institute','2020-09-24 20:56:50+02','2021-01-21 15:47:42+01',1384,60,11);
+	 ('e0300a60-ffc1-407b-832c-249e5c50a83b','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Arcu Vivamus Institute','2020-09-24 20:56:50+02','2021-01-21 15:47:42+01',1384,60,11),
+	 ('27abf0d5-cfed-4d28-bf73-b1a76a0f65cb','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Erat Volutpat Incorporated','2020-05-20 10:47:44+02','2020-11-17 00:03:50+01',3530,60,31);
 INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
-	 ('27abf0d5-cfed-4d28-bf73-b1a76a0f65cb','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Erat Volutpat Incorporated','2020-05-20 10:47:44+02','2020-11-17 00:03:50+01',3530,60,31),
 	 ('2c4fcf07-1de0-4a15-b5e2-898d1f23583e','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Enim Condimentum Corp.','2017-10-28 15:02:17+02','2021-05-06 10:06:47+02',5051,60,14),
 	 ('6565b0b9-e074-4656-acd4-b9892edfa68d','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Augue Porttitor Incorporated','2020-07-19 20:53:12+02','2022-05-27 00:40:22+02',8922,80,28),
 	 ('09efde66-5722-46ba-bb65-8b9bf061738a','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Dui Nec LLC','2017-10-20 05:14:31+02','2020-08-29 00:03:56+02',4078,60,56),
@@ -266,9 +265,9 @@ INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,
 	 ('5dc30499-f5d3-4325-884a-62e746365775','64d08db0-a998-486a-b21d-3a498ba324cc','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Commodo At Industries','2018-06-16 03:56:02+02','2021-11-04 04:08:24+01',6387,80,32),
 	 ('69278a72-bfb8-4b52-a226-fedc27df27fa','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Sollicitudin Commodo Incorporated','2021-07-11 13:36:43+02','2022-01-31 01:39:39+01',6347,70,16),
 	 ('1b8485de-e631-498e-921d-f1451340d96b','97866abe-667f-4b43-99bf-b7fc264a468b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Sem Elit Incorporated','2018-08-26 02:26:50+02','2020-07-02 21:43:33+02',2831,80,46),
-	 ('bc957a20-a942-4925-a873-7dff865fd654','64d08db0-a998-486a-b21d-3a498ba324cc','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Odio Nam Incorporated','2018-04-14 12:14:22+02','2020-10-21 17:39:11+02',8196,60,45);
+	 ('bc957a20-a942-4925-a873-7dff865fd654','64d08db0-a998-486a-b21d-3a498ba324cc','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Odio Nam Incorporated','2018-04-14 12:14:22+02','2020-10-21 17:39:11+02',8196,60,45),
+	 ('4d64d0ae-f8a3-4ac8-8eb3-dd48840daa7f','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Eu Odio PC','2020-08-24 23:08:03+02','2022-04-25 12:02:09+02',3055,70,12);
 INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
-	 ('4d64d0ae-f8a3-4ac8-8eb3-dd48840daa7f','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Eu Odio PC','2020-08-24 23:08:03+02','2022-04-25 12:02:09+02',3055,70,12),
 	 ('3f817a91-c4fa-4b68-9c3e-96c5305e2bda','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Sapien Aenean Consulting','2020-11-07 23:00:21+01','2021-11-23 11:47:57+01',6679,60,2),
 	 ('434608d0-09bd-4373-8dee-afc6f222c429','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Pede Praesent Associates','2017-03-23 01:19:55+01','2020-04-14 21:39:04+02',263,70,59),
 	 ('dadbebca-b079-49b5-9e89-8586646bfd06','0a8d350f-a740-43e5-aea9-3417b7e4a49f','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Sed Malesuada PC','2018-10-12 04:27:13+02','2020-08-19 00:51:46+02',6010,70,27),
@@ -277,9 +276,9 @@ INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,
 	 ('ea3c0228-4cf8-4ea3-9f50-0e2049966c85','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Amet Diam Eu Associates','2018-04-05 05:15:58+02','2020-07-04 14:35:59+02',524,70,35),
 	 ('bc762cba-2582-42c8-bfb0-e32c73907c45','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Lectus LLP','2018-03-09 16:34:41+01','2021-08-17 02:20:09+02',3765,80,55),
 	 ('82fa3302-6e2a-4567-80ab-326c75f75db3','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Quisque Tincidunt Industries','2021-01-13 02:38:35+01','2021-02-10 18:17:28+01',6913,80,59),
-	 ('d73324bc-1107-451a-8383-f44630a194c5','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Mattis Cras Inc.','2018-10-29 14:49:12+01','2020-11-26 04:54:54+01',9245,60,39);
+	 ('d73324bc-1107-451a-8383-f44630a194c5','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Mattis Cras Inc.','2018-10-29 14:49:12+01','2020-11-26 04:54:54+01',9245,60,39),
+	 ('9f4bd368-f3ac-46c4-8b87-686571c5c51a','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Mollis Lectus Incorporated','2017-07-23 10:10:03+02','2021-06-08 22:00:24+02',3542,70,57);
 INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
-	 ('9f4bd368-f3ac-46c4-8b87-686571c5c51a','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Mollis Lectus Incorporated','2017-07-23 10:10:03+02','2021-06-08 22:00:24+02',3542,70,57),
 	 ('e9c30533-d38b-48f7-936d-ab9b5be8c859','05e2ccbb-4667-4f7e-bb0f-8133095b829b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Proin Nisl Sem Corporation','2018-05-11 05:18:52+02','2021-12-11 00:22:31+01',3381,60,13),
 	 ('206dd19c-444e-493c-a06f-927b8f33e9ff','0a8d350f-a740-43e5-aea9-3417b7e4a49f','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Aliquam PC','2017-09-16 05:47:23+02','2020-05-16 19:36:10+02',3099,60,53),
 	 ('dcfadda5-3299-4a28-8273-808103a98384','0a8d350f-a740-43e5-aea9-3417b7e4a49f','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Adipiscing Elit Industries','2020-11-24 13:22:56+01','2021-03-11 13:46:47+01',9394,70,31),
@@ -288,73 +287,75 @@ INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,
 	 ('bdee60d1-a84a-4a01-beac-30b22b043ebb','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Morbi Quis Corp.','2020-08-23 19:24:43+02','2022-07-19 02:00:50+02',8802,60,21),
 	 ('233a12d5-aa3d-4e60-a9a2-fa4afdb666bb','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Scelerisque Neque Nullam Corporation','2018-02-27 09:09:22+01','2022-01-19 23:59:05+01',6432,60,50),
 	 ('26606b3e-9e86-4579-8b12-6c799f1b9213','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Luctus Felis Industries','2021-10-22 02:33:23+02','2022-08-03 08:28:14+02',3235,80,3),
-	 ('1667ea5f-d5c9-433e-902c-73ae7c39ef50','97866abe-667f-4b43-99bf-b7fc264a468b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Magna Corporation','2021-12-17 02:35:28+01','2022-09-29 07:28:01+02',629,70,42);
+	 ('1667ea5f-d5c9-433e-902c-73ae7c39ef50','97866abe-667f-4b43-99bf-b7fc264a468b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Magna Corporation','2021-12-17 02:35:28+01','2022-09-29 07:28:01+02',629,70,42),
+	 ('1c73e004-b124-4438-a117-59fed90facb9','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Amet Nulla Associates','2020-10-08 17:12:13+02','2022-08-19 19:09:02+02',2053,60,50);
 INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
-	 ('1c73e004-b124-4438-a117-59fed90facb9','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Amet Nulla Associates','2020-10-08 17:12:13+02','2022-08-19 19:09:02+02',2053,60,50),
 	 ('f0c9337b-872d-43d8-a1d0-52f4c3b9cb58','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Et Arcu Imperdiet Incorporated','2017-11-02 09:11:13+01','2020-08-03 22:32:34+02',7094,70,52),
 	 ('0dc6e7fa-7bdf-48b2-9088-a712f0074e78','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Convallis Ligula Donec Incorporated','2018-03-10 04:57:51+01','2021-12-19 09:49:27+01',8870,80,2),
 	 ('4688c71f-0767-4ee9-a78d-bbab6a51f9d3','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Malesuada Malesuada Foundation','2017-11-01 03:51:44+01','2021-04-05 02:26:20+02',2051,60,24),
 	 ('42dcc9bc-8e32-4118-b349-cda4528a99bc','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Nulla Ante LLC','2021-08-11 09:51:07+02','2021-09-20 16:24:17+02',2060,60,38),
 	 ('dc427046-7b6b-4a8f-9fbb-37916f112518','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Nisl Quisque Industries','2020-12-31 20:10:00+01','2021-08-15 16:47:49+02',6799,70,46),
 	 ('33024c1a-b9a6-44d8-94a5-c2c4c52fd706','05e2ccbb-4667-4f7e-bb0f-8133095b829b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Sit Amet Institute','2018-03-09 04:49:15+01','2022-02-08 18:59:20+01',1869,70,8),
-	 ('ec0fc36d-6e5e-40af-8bf2-cfec5aeee4a5','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Aliquam Enim LLP','2021-10-02 14:29:19+02','2021-12-16 16:18:46+01',2867,70,7);
-INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
+	 ('ec0fc36d-6e5e-40af-8bf2-cfec5aeee4a5','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Aliquam Enim LLP','2021-10-02 14:29:19+02','2021-12-16 16:18:46+01',2867,70,7),
 	 ('ba9ce94c-df30-437e-8b6e-ecdfb665ab5d','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Lobortis PC','2018-02-15 04:50:03+01','2020-09-20 20:23:46+02',9622,60,35),
 	 ('64401dd9-8b54-4556-b8c8-51f158acbc49','05e2ccbb-4667-4f7e-bb0f-8133095b829b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Placerat Orci Lacus Institute','2020-12-31 18:25:51+01','2022-08-02 22:10:29+02',6801,70,10),
-	 ('df4bc53d-45fd-4f72-87fb-a21e51ef1886','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Rutrum Fusce Dolor PC','2017-11-06 02:42:44+01','2020-08-28 13:40:38+02',8669,70,19),
+	 ('df4bc53d-45fd-4f72-87fb-a21e51ef1886','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Rutrum Fusce Dolor PC','2017-11-06 02:42:44+01','2020-08-28 13:40:38+02',8669,70,19);
+INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
 	 ('ada50587-7e16-46eb-b8f3-643937105b1b','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Vitae Orci LLC','2017-10-06 11:56:38+02','2021-07-27 06:42:32+02',9712,60,13),
 	 ('f8376f2f-489d-4ce2-b3b7-f501ae2ef9fa','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Cubilia LLC','2020-09-24 00:02:17+02','2022-06-29 00:34:35+02',8421,70,44),
 	 ('45455f0d-db6c-4f8c-aa78-58bf555f2216','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Dui Fusce Foundation','2021-02-19 05:16:29+01','2022-10-06 11:08:42+02',6990,70,9),
 	 ('e90ce388-1c67-410b-b45f-56ca30d4113c','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Metus In Foundation','2021-07-26 14:47:31+02','2021-11-19 16:20:59+01',5941,60,57),
 	 ('a234512f-af43-4b7b-b097-80205386c6af','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Ut Semper Ltd','2021-12-20 21:10:44+01','2022-02-23 11:26:32+01',8229,80,49),
 	 ('398245a3-01c2-423a-abf3-5216f219003a','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Cubilia Curae Inc.','2021-01-07 01:11:41+01','2021-10-31 07:07:35+01',7974,80,9),
-	 ('8cfb008d-1da8-46d0-a9d4-ea942c8e7caa','0a8d350f-a740-43e5-aea9-3417b7e4a49f','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Auctor Ullamcorper PC','2018-07-16 02:47:13+02','2022-06-25 18:39:22+02',8507,80,43);
-INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
+	 ('8cfb008d-1da8-46d0-a9d4-ea942c8e7caa','0a8d350f-a740-43e5-aea9-3417b7e4a49f','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Auctor Ullamcorper PC','2018-07-16 02:47:13+02','2022-06-25 18:39:22+02',8507,80,43),
 	 ('4afddadb-d09f-4b74-bc27-17e5ab1347fe','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Tellus Industries','2018-06-18 22:01:27+02','2021-04-15 20:03:04+02',1451,70,11),
-	 ('fa5f65d9-8342-4373-920f-f1719a1355ea','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Donec Egestas Incorporated','2017-02-28 21:10:12+01','2020-06-11 18:49:10+02',5855,80,26),
 	 ('2b9d714b-a50b-47c0-8b25-7a16ceb0a504','05e2ccbb-4667-4f7e-bb0f-8133095b829b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Orci Donec Nibh Inc.','2018-03-01 22:08:55+01','2021-12-09 05:10:00+01',9632,60,20),
-	 ('c3f66fd0-bd80-4f9e-89a1-fdbfbf29956e','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ornare Facilisis Industries','2016-10-10 18:23:05+02','2020-09-12 06:01:57+02',3499,70,16),
+	 ('c3f66fd0-bd80-4f9e-89a1-fdbfbf29956e','8ecd3a95-d065-4ddc-88d8-129ff49e2172','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ornare Facilisis Industries','2016-10-10 18:23:05+02','2020-09-12 06:01:57+02',3499,70,16);
+INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
 	 ('16e0fd6d-d606-4a7d-b16f-004c3731a23e','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Sagittis Foundation','2018-07-01 15:28:21+02','2021-10-22 09:49:20+02',1628,70,2),
 	 ('6ae5ae42-322e-4fc1-82a4-f4d0ffc1df98','97866abe-667f-4b43-99bf-b7fc264a468b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Enim Nunc PC','2022-02-17 07:52:49+01','2022-08-27 16:52:20+02',2838,60,5),
 	 ('a07520ed-b502-484a-ad23-58ed9820f101','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Hendrerit Neque Incorporated','2020-09-26 09:16:46+02','2022-06-08 16:04:22+02',7004,60,30),
 	 ('22d0c62a-a70c-4c34-a0d2-b9c49429f08a','97866abe-667f-4b43-99bf-b7fc264a468b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Curae Associates','2018-06-22 00:03:38+02','2021-03-19 18:13:22+01',7503,60,50),
-	 ('e1f8ed40-a8d2-4877-b62b-e5d3c5c2bff0','97866abe-667f-4b43-99bf-b7fc264a468b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Ac Turpis Egestas Corp.','2017-03-07 10:36:08+01','2020-08-29 12:00:12+02',6557,80,9),
-	 ('6a4f54f5-cc7b-48b0-a532-cdb97f81144e','0a8d350f-a740-43e5-aea9-3417b7e4a49f','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Sollicitudin Adipiscing Ligula LLP','2017-04-08 08:42:53+02','2020-05-26 05:55:44+02',7230,60,23);
-INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
+	 ('6a4f54f5-cc7b-48b0-a532-cdb97f81144e','0a8d350f-a740-43e5-aea9-3417b7e4a49f','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Sollicitudin Adipiscing Ligula LLP','2017-04-08 08:42:53+02','2020-05-26 05:55:44+02',7230,60,23),
 	 ('379ce78a-508c-49f8-b0e4-0b9f577c88b8','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Ut Pellentesque Institute','2020-09-15 20:57:23+02','2020-09-16 01:12:25+02',3097,70,12),
 	 ('22c99e5c-a83f-44ef-b6c3-8a14f4665677','64d08db0-a998-486a-b21d-3a498ba324cc','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Vel Quam Inc.','2020-09-21 00:57:44+02','2021-08-24 20:56:04+02',2940,70,28),
 	 ('a18a99d6-ef34-40dd-ad04-0a6475f70b11','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Aliquam Ornare Limited','2017-10-05 22:44:39+02','2021-06-03 20:04:59+02',1050,60,24),
 	 ('20658e6e-b40a-44ef-8b0f-2b0c4749869b','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Tellus Justo PC','2017-09-10 05:11:57+02','2021-01-22 03:37:04+01',6918,80,13),
-	 ('286e070e-f2c7-4e2c-bf02-b902d2fb1468','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Cursus Corp.','2018-10-07 01:52:15+02','2022-04-17 10:21:58+02',1755,70,31),
+	 ('286e070e-f2c7-4e2c-bf02-b902d2fb1468','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Cursus Corp.','2018-10-07 01:52:15+02','2022-04-17 10:21:58+02',1755,70,31);
+INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
 	 ('dd18c606-0a7b-4ff4-b94a-b5c19be0b8c4','97866abe-667f-4b43-99bf-b7fc264a468b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Nulla Associates','2020-11-30 23:55:16+01','2022-01-25 19:07:37+01',1402,80,36),
 	 ('f85e0a47-f7fb-4793-876b-7ff448884604','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Enim Corp.','2020-09-10 00:31:37+02','2021-09-15 13:15:20+02',7071,80,16),
 	 ('693eadb5-6815-4c8b-ab06-9fdd82692503','64d08db0-a998-486a-b21d-3a498ba324cc','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Orci Corp.','2017-01-03 12:28:24+01','2020-11-21 12:38:19+01',4175,60,10),
 	 ('9ed65942-0fe4-45a6-8f27-7eeaf7edb10d','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ultrices A Associates','2020-08-31 10:45:08+02','2021-05-05 08:46:30+02',4350,60,38),
-	 ('d9e9081b-79db-4d57-b06d-0d1d9eb73244','97866abe-667f-4b43-99bf-b7fc264a468b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Interdum Curabitur Company','2021-01-13 00:45:19+01','2022-06-30 15:08:26+02',7026,80,41);
-INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
+	 ('d9e9081b-79db-4d57-b06d-0d1d9eb73244','97866abe-667f-4b43-99bf-b7fc264a468b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Interdum Curabitur Company','2021-01-13 00:45:19+01','2022-06-30 15:08:26+02',7026,80,41),
 	 ('17f60dc3-753a-478f-937c-1df951636c8b','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Nisl Elementum LLP','2021-02-07 07:16:12+01','2022-08-14 05:25:53+02',1884,80,26),
 	 ('eb0d5406-7d6a-45e9-8654-952729882f38','97866abe-667f-4b43-99bf-b7fc264a468b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Velit Eu LLP','2018-04-16 16:19:16+02','2022-01-29 13:53:01+01',2590,70,29),
 	 ('681558b1-9f48-419d-98df-9e0f46072d06','64d08db0-a998-486a-b21d-3a498ba324cc','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ut Molestie LLP','2020-05-19 14:48:52+02','2022-05-30 13:49:14+02',8928,60,3),
 	 ('0df8d5ac-5eff-4c8f-a462-732ce4018c90','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Aliquam Incorporated','2018-07-08 02:27:54+02','2020-11-22 08:56:03+01',8574,70,3),
-	 ('3b33b034-4f2b-4ba4-b1b7-ecf74f6881f3','64d08db0-a998-486a-b21d-3a498ba324cc','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ultrices Posuere Corp.','2020-10-30 16:47:41+01','2021-09-02 03:37:01+02',204,60,35),
+	 ('3b33b034-4f2b-4ba4-b1b7-ecf74f6881f3','64d08db0-a998-486a-b21d-3a498ba324cc','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ultrices Posuere Corp.','2020-10-30 16:47:41+01','2021-09-02 03:37:01+02',204,60,35);
+INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
 	 ('54fc3fc5-e0a2-466f-96bb-11575657c104','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ac Foundation','2018-09-01 15:19:25+02','2020-09-11 03:14:13+02',3716,80,19),
 	 ('bdd50a22-b3b8-48a2-8641-04f2a226285e','05e2ccbb-4667-4f7e-bb0f-8133095b829b','cd7ff342-18a5-4d9b-bb82-b6060436fc18',NULL,'Sagittis Institute','2017-10-16 08:58:33+02','2020-09-30 00:49:55+02',9974,60,26),
 	 ('fb4f1503-98ce-4b19-950c-069c8877de4f','05e2ccbb-4667-4f7e-bb0f-8133095b829b','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Suspendisse Commodo Tincidunt LLC','2020-10-24 20:05:34+02','2022-01-04 15:10:11+01',4848,80,34),
 	 ('cb96996a-7b09-4e4d-a5e5-b691e80320b0','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Ac Urna Limited','2021-04-21 19:21:42+02','2021-07-31 23:23:52+02',8585,80,3),
-	 ('fcc92d58-e274-40a6-b2a4-3183e5ff53b3','cd7ff342-18a5-4d9b-bb82-b6060436fc18','17831794-b536-42ce-aa50-8306971f2868',NULL,'Qatar Airlines','2021-11-04 10:28:40+01','2021-11-05 09:12:46+01',1334.82,100,72);
-INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
+	 ('fcc92d58-e274-40a6-b2a4-3183e5ff53b3','cd7ff342-18a5-4d9b-bb82-b6060436fc18','17831794-b536-42ce-aa50-8306971f2868',NULL,'Qatar Airlines','2021-11-04 10:28:40+01','2021-11-05 09:12:46+01',1334.82,100,72),
 	 ('e066f404-6335-4ca9-93b0-1abd35f344d9','2df0b812-a93e-4b39-bf48-d2db9b39441b','f7e1fbdf-269a-44b5-ac30-f63abac1711b',NULL,'Mocky-Mock Airlines','2022-01-07 10:28:40+01','2022-01-08 11:10:51+01',9007.01,60,28),
 	 ('9ea4845e-2f2f-423d-9707-0ee647423d95','cd7ff342-18a5-4d9b-bb82-b6060436fc18','41a82d46-228a-4c26-bdfc-7d7bbd5a9e82',NULL,'Manolo e Hijos Airlines','2022-07-21 10:12:10+02','2022-07-29 19:11:23+02',2114.41,90,89),
 	 ('16bf19ee-c521-4605-9675-bacba5bba0c3','cd7ff342-18a5-4d9b-bb82-b6060436fc18','8a6417da-f0e8-4b5e-ad51-9dc22bcf0f81',NULL,'Google Airlines','2022-01-29 04:01:02+01','2022-02-01 06:58:21+01',1031.11,80,72),
 	 ('0bd72c78-5443-4bf1-81d3-2875198150a0','2df0b812-a93e-4b39-bf48-d2db9b39441b','493d59f8-018e-45e8-b1e3-b2609a2fe901',NULL,'Los Romeros de la Puebla airlines','2022-08-05 20:10:18+02','2022-08-07 02:05:51+02',8741.21,80,65),
-	 ('7d2c2481-3f63-4b76-ab24-2ac4e112d471','2df0b812-a93e-4b39-bf48-d2db9b39441b','64c5deb4-3a80-4a9f-a176-c2f296612ce6',NULL,'Air Airline','2022-01-21 10:28:40+01','2022-01-22 08:11:51+01',7884.40,85,44),
+	 ('7d2c2481-3f63-4b76-ab24-2ac4e112d471','2df0b812-a93e-4b39-bf48-d2db9b39441b','64c5deb4-3a80-4a9f-a176-c2f296612ce6',NULL,'Air Airline','2022-01-21 10:28:40+01','2022-01-22 08:11:51+01',7884.40,85,44);
+INSERT INTO public.flights (id,origin_id,destination_id,layover_id,airline_name,departure_date,arrival_date,distance,max_capacity,actual_capacity) VALUES
 	 ('761fe8ea-ae11-4a3a-a411-6a64a95e5f1a','2df0b812-a93e-4b39-bf48-d2db9b39441b','6c589f68-ee47-4512-b3bb-e3a608eee03b',NULL,'Line Airlines','2022-09-30 05:14:22+02','2022-10-01 11:01:41+02',1584.61,85,13),
 	 ('64f3e4e1-b1aa-4e80-9c8f-b1d292e6787d','cd7ff342-18a5-4d9b-bb82-b6060436fc18','e6953be4-256d-4e8d-bb1d-a5d56823320e',NULL,'Qwerty Airlines','2022-08-21 01:11:55+02','2022-08-29 15:05:11+02',9354.51,50,7),
 	 ('cc909240-b5d0-45a1-8e07-18421165d74b','cd7ff342-18a5-4d9b-bb82-b6060436fc18','2df0b812-a93e-4b39-bf48-d2db9b39441b',NULL,'Fake Airlines','2022-01-21 10:28:40+01','2022-01-22 08:11:51+01',7854.41,80,79),
 	 ('3fd7dbad-7125-42ea-9309-52f12182d4b2','2df0b812-a93e-4b39-bf48-d2db9b39441b','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5',NULL,'RyanAir Iberia','2021-10-20 11:28:40+02','2021-10-22 09:11:51+02',7854.41,80,23),
 	 ('757ac6bc-9908-4834-99ec-43f91064f4f9','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','2df0b812-a93e-4b39-bf48-d2db9b39441b','3fd7dbad-7125-42ea-9309-52f12182d4b2','Vulputate Lacus Associates','2018-07-28 10:41:27+02','2021-09-01 15:28:40+02',7673,80,37),
-   ('ebee5ba4-7d8d-464a-bb4c-2a92dbffcd40','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18','cc909240-b5d0-45a1-8e07-18421165d74b','Mus Industries','2018-01-28 12:16:13+01','2021-08-29 00:34:21+02',4884,60,12),
-	 ('4bd23192-cef2-4c1c-bd72-7b2bf8eaf8cc','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18','3fd7dbad-7125-42ea-9309-52f12182d4b2','Pellentesque Inc.','2021-08-20 09:26:01+02','2021-10-18 08:31:50+02',5609,70,19);
+	 ('ebee5ba4-7d8d-464a-bb4c-2a92dbffcd40','8ecd3a95-d065-4ddc-88d8-129ff49e2172','cd7ff342-18a5-4d9b-bb82-b6060436fc18','cc909240-b5d0-45a1-8e07-18421165d74b','Mus Industries','2018-01-28 12:16:13+01','2021-08-29 00:34:21+02',4884,60,12),
+	 ('4bd23192-cef2-4c1c-bd72-7b2bf8eaf8cc','62bef1d2-8aea-4d43-bb11-0e853c4fe2b5','cd7ff342-18a5-4d9b-bb82-b6060436fc18','3fd7dbad-7125-42ea-9309-52f12182d4b2','Pellentesque Inc.','2021-08-20 09:26:01+02','2021-10-18 08:31:50+02',5609,70,19),
+	 ('99d1ac55-3c05-42d0-83fb-32a5a701dc1b','0a8d350f-a740-43e5-aea9-3417b7e4a49f','64c5deb4-3a80-4a9f-a176-c2f296612ce6',NULL,'Nonummy Ultricies Ornare Institute','2020-09-27 18:44:57+02','2020-11-07 18:01:23+01',5123,60,26),
+	 ('fa5f65d9-8342-4373-920f-f1719a1355ea','99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d','cd7ff342-18a5-4d9b-bb82-b6060436fc18','e1f8ed40-a8d2-4877-b62b-e5d3c5c2bff0','Donec Egestas Incorporated','2017-02-28 21:10:12+01','2020-06-11 18:49:10+02',5855,80,26),
+	 ('e1f8ed40-a8d2-4877-b62b-e5d3c5c2bff0','cd7ff342-18a5-4d9b-bb82-b6060436fc18','0a8d350f-a740-43e5-aea9-3417b7e4a49f','99d1ac55-3c05-42d0-83fb-32a5a701dc1b','Ac Turpis Egestas Corp.','2017-03-07 10:36:08+01','2020-08-29 12:00:12+02',6557,80,9);
+
 
 -------------
 -- TICKETS --
