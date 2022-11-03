@@ -22,11 +22,11 @@ public class Airport implements Serializable {
     @Column(nullable = false)
     private String city;
 
-    @OneToMany(mappedBy = "originId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "origin_id", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Flight> originList;
 
-    @OneToMany(mappedBy = "destinationId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "destination_id", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Flight> destinationList;
 

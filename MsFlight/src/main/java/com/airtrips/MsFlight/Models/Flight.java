@@ -19,42 +19,42 @@ public class Flight implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "origin_id", nullable = false)
-    private Airport originId;
+    private Airport origin_id;
 
     @ManyToOne
     @JoinColumn(name = "destination_id", nullable = false)
-    private Airport destinationId;
+    private Airport destination_id;
 
     @ManyToOne
     @JoinColumn(name = "layover_id", referencedColumnName = "id", nullable = true)
-    private Flight layoverId;
-    @Column(nullable = false)
+    private Flight layover_id;
+    @Column(name = "airline_name", nullable = false)
     private String airLine;
-    @Column(nullable = false)
+    @Column(name = "departure_date",nullable = false)
     private Instant departureDate;
-    @Column(nullable = false)
+    @Column(name = "arrival_date", nullable = false)
     private Instant arrivalDate;
     @Column(nullable = false)
     private Double distance;
-    @Column(nullable = false)
+    @Column(name = "max_capacity", nullable = false)
     private Integer maxCapacity;
-    @Column(nullable = false)
+    @Column(name="actual_capacity", nullable = false)
     private Integer actualCapacity;
 
-    @OneToMany(mappedBy = "flightId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "flight_id", fetch = FetchType.LAZY)
     private List<Ticket> ticketList;
 
 
-    @OneToMany(mappedBy = "layoverId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "layover_id", fetch = FetchType.LAZY)
     private List<Flight> layoverList;
 
     public Flight(){}
 
-    public Flight(UUID id, Airport originId, Airport destinationId, Flight layoverId, String airLine, Instant departureDate, Instant arrivalDate, Double distance, Integer maxCapacity, Integer actualCapacity, List<Ticket> ticketList, List<Flight> layoverList) {
+    public Flight(UUID id, Airport origin_id, Airport destination_id, Flight layover_id, String airLine, Instant departureDate, Instant arrivalDate, Double distance, Integer maxCapacity, Integer actualCapacity, List<Ticket> ticketList, List<Flight> layoverList) {
         this.id = id;
-        this.originId = originId;
-        this.destinationId = destinationId;
-        this.layoverId = layoverId;
+        this.origin_id = origin_id;
+        this.destination_id = destination_id;
+        this.layover_id = layover_id;
         this.airLine = airLine;
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
@@ -65,10 +65,10 @@ public class Flight implements Serializable {
         this.layoverList = layoverList;
     }
 
-    public Flight(Airport originId, Airport destinationId, Flight layoverId, String airLine, Instant departureDate, Instant arrivalDate, Double distance, Integer maxCapacity, Integer actualCapacity, List<Ticket> ticketList, List<Flight> layoverList) {
-        this.originId = originId;
-        this.destinationId = destinationId;
-        this.layoverId = layoverId;
+    public Flight(Airport origin_id, Airport destination_id, Flight layover_id, String airLine, Instant departureDate, Instant arrivalDate, Double distance, Integer maxCapacity, Integer actualCapacity, List<Ticket> ticketList, List<Flight> layoverList) {
+        this.origin_id = origin_id;
+        this.destination_id = destination_id;
+        this.layover_id = layover_id;
         this.airLine = airLine;
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
@@ -143,28 +143,28 @@ public class Flight implements Serializable {
         this.ticketList = ticketList;
     }
 
-    public Airport getOriginId() {
-        return originId;
+    public Airport getOrigin_id() {
+        return origin_id;
     }
 
-    public void setOriginId(Airport originId) {
-        this.originId = originId;
+    public void setOrigin_id(Airport origin_id) {
+        this.origin_id = origin_id;
     }
 
-    public Airport getDestinationId() {
-        return destinationId;
+    public Airport getDestination_id() {
+        return destination_id;
     }
 
-    public void setDestinationId(Airport destinationId) {
-        this.destinationId = destinationId;
+    public void setDestination_id(Airport destination_id) {
+        this.destination_id = destination_id;
     }
 
-    public Flight getLayoverId() {
-        return layoverId;
+    public Flight getLayover_id() {
+        return layover_id;
     }
 
-    public void setLayoverId(Flight layoverId) {
-        this.layoverId = layoverId;
+    public void setLayover_id(Flight layover_id) {
+        this.layover_id = layover_id;
     }
 
     public List<Flight> getLayoverList() {
@@ -186,9 +186,9 @@ public class Flight implements Serializable {
                 ", maxCapacity=" + maxCapacity +
                 ", actualCapacity=" + actualCapacity +
                 ", ticketList=" + ticketList +
-                ", originId=" + originId +
-                ", destinationId=" + destinationId +
-                ", layoverId=" + layoverId +
+                ", originId=" + origin_id +
+                ", destinationId=" + destination_id +
+                ", layoverId=" + layover_id +
                 ", layoverList=" + layoverList +
                 '}';
     }

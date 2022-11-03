@@ -16,7 +16,7 @@ public class Ticket implements Serializable {
     private UUID id;
     @Column(nullable = false)
     private DecimalFormat price;
-    @Column(nullable = false)
+    @Column(name="has_luggage", nullable = false)
     private boolean hasLuggage;
 
     @ManyToOne
@@ -25,22 +25,22 @@ public class Ticket implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "flight_id", nullable = false)
-    private Flight flightId;
+    private Flight flight_id;
 
     public Ticket(){}
-    public Ticket(UUID id, DecimalFormat price, boolean hasLuggage, Customer customerId, Flight flightId) {
+    public Ticket(UUID id, DecimalFormat price, boolean hasLuggage, Customer customerId, Flight flight_id) {
         this.id = id;
         this.price = price;
         this.hasLuggage = hasLuggage;
         this.customerId = customerId;
-        this.flightId = flightId;
+        this.flight_id = flight_id;
     }
 
-    public Ticket(DecimalFormat price, boolean hasLuggage, Customer customerId, Flight flightId) {
+    public Ticket(DecimalFormat price, boolean hasLuggage, Customer customerId, Flight flight_id) {
         this.price = price;
         this.hasLuggage = hasLuggage;
         this.customerId = customerId;
-        this.flightId = flightId;
+        this.flight_id = flight_id;
     }
 
     public UUID getId() {
@@ -75,12 +75,12 @@ public class Ticket implements Serializable {
         this.customerId = customerId;
     }
 
-    public Flight getFlightId() {
-        return flightId;
+    public Flight getFlight_id() {
+        return flight_id;
     }
 
-    public void setFlightId(Flight flightId) {
-        this.flightId = flightId;
+    public void setFlight_id(Flight flight_id) {
+        this.flight_id = flight_id;
     }
 
     @Override
@@ -90,7 +90,7 @@ public class Ticket implements Serializable {
                 ", price=" + price +
                 ", hasLuggage=" + hasLuggage +
                 ", customerId=" + customerId +
-                ", flightId=" + flightId +
+                ", flightId=" + flight_id +
                 '}';
     }
 }
