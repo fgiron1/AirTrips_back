@@ -92,6 +92,36 @@ begin
 end; $$
 
 
+create or replace function find_flights_by_layover
+(
+	layover_number int,
+	origin uuid,
+	destination uuid
+)
+
+returns table (
+	id uuid,
+	origin_id uuid,
+	destination_id uuid,
+	layover_id uuid,
+	airline_name varchar(50),
+	departure_date timestamptz,
+	arrival_date timestamptz,
+	distance numeric,
+	max_capacity int4,
+	actual_capacity int4
+)
+as $$
+begin
+	if layover_number = 1 then
+		return query select f1.* from find_flights_by_1_layover(origin, destination) as f1;
+	elsif layover_number = 2 then
+		return query select f2.* from find_flights_by_2_layover(origin, destination) as f2;
+	else
+	end if;
+end; $$
+language plpgsql; 
+
 create or replace function find_flights_by_1_layover
 (
 	origin uuid,
@@ -109,13 +139,22 @@ returns table (
 	max_capacity int4,
 	actual_capacity int4
 )
-language plpgsql as 
-$$
+as $$
 begin 
-return query
-	select * from flights
-	where layover_id is not null
+	return query
+		select f.* from flights f
+		inner join
+		(select f.layover_id from flights f
+		where f.layover_id is not null and
+			  f.origin_id = origin) sub1
+		on f.id = sub1.layover_id
+		where f.destination_id = destination
+		union
+		(select f2.* from flights f2
+		where f2.layover_id is not null and
+			  f2.origin_id = origin);
 end; $$
+language plpgsql;
 
 
 create or replace function find_flights_by_2_layover
@@ -135,22 +174,41 @@ returns table (
 	max_capacity int4,
 	actual_capacity int4
 )
-language plpgsql as 
-$$
+as $$
 begin 
 return query
-	select * from flights f
+	select f2.* from flights f2
 	inner join
-	(select * from flights
-	where layover_id is not null and
-		  origin_id = origin and
-		  destination_id = destination) sub1
-	on f.id = sub1.layover_id
-	where f.layover_id is not null and
-			origin_id = origin and
-		  	destination_id = destination
-end; $$
+		(
+			select f.* from flights f
+			inner join
+			(
+				select * from flights f2
+				where f2.layover_id is not null and
+					  f2.origin_id = origin
+			) sub1
+			on f.id = sub1.layover_id
+			where f.layover_id is not null
+		) sub2
+	on f2.id = sub2.layover_id
+	where f2.destination_id = destination
+	union
+	(select f2.* from flights f2
+				where f2.layover_id is not null and
+					  f2.origin_id = origin)
+	union
+	(select f.* from flights f
+			inner join
+			(
+				select * from flights f2
+				where f2.layover_id is not null and
+					  f2.origin_id = origin
+			) sub1
+			on f.id = sub1.layover_id
+			where f.layover_id is not null);
 
+end; $$
+language plpgsql;
 
 // 1. Reservas tu vuelo
 // 2. Pones tus datos
