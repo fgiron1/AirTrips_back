@@ -14,24 +14,13 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "Flight")
+@Table(name = "flights")
 public class Flight implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private UUID id;
-
-//    @Column(nullable = false)
-//    private UUID originId;
-//    @Column(nullable = false)
-//    private UUID destinationId;
-    @Column(nullable = false)
-    private UUID layoverId;
     @Column(nullable = false)
     private String airLine;
     @Column(nullable = false)
@@ -56,5 +45,11 @@ public class Flight implements Serializable {
     @JoinColumn(name = "destination_id", nullable = false)
     private Airport destinationId;
 
+    @ManyToOne
+    @JoinColumn(name = "layover_id", referencedColumnName = "id", nullable = true)
+    private Flight layoverId;
+
+    @OneToMany(mappedBy = "layoverId", fetch = FetchType.LAZY)
+    private List<Flight> layoverList;
 
 }

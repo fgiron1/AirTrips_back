@@ -12,10 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "airports")
 public class Airport implements Serializable {
 
     @Id
@@ -37,4 +34,80 @@ public class Airport implements Serializable {
     @JsonIgnore
     private List<Flight> destinationList;
 
+    public Airport(UUID id, String name, String country, String city, List<Flight> originList, List<Flight> destinationList) {
+        this.id = id;
+        this.name = name;
+        this.country = country;
+        this.city = city;
+        this.originList = originList;
+        this.destinationList = destinationList;
+    }
+
+    public Airport(String name, String country, String city, List<Flight> originList, List<Flight> destinationList) {
+        this.name = name;
+        this.country = country;
+        this.city = city;
+        this.originList = originList;
+        this.destinationList = destinationList;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public List<Flight> getOriginList() {
+        return originList;
+    }
+
+    public void setOriginList(List<Flight> originList) {
+        this.originList = originList;
+    }
+
+    public List<Flight> getDestinationList() {
+        return destinationList;
+    }
+
+    public void setDestinationList(List<Flight> destinationList) {
+        this.destinationList = destinationList;
+    }
+
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", originList=" + originList +
+                ", destinationList=" + destinationList +
+                '}';
+    }
 }

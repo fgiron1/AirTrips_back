@@ -15,9 +15,9 @@ public interface FlightRepository extends JpaRepository<Flight, UUID> {
     @Query(value="SELECT * FROM flights WHERE airline=:airline", nativeQuery = true)
     Stream<Flight> filterByAirLine(String airline);
 
-    @Query(value ="SELECT * FROM flights WHERE layover=:layover", nativeQuery = true)
+    @Query(value ="SELECT * FROM flights WHERE layover=:layoverNumber", nativeQuery = true)
     Stream<Flight> filterByScales(int layoverNumber);
 
-    @Query(value ="SELECT * FROM flights WHERE departureDate=:departureDate", nativeQuery = true)
-    Stream<Flight> getFligths(Instant firstFlightDepartureDate);
+    @Query(value ="SELECT * FROM flights WHERE departureDate=:flightDepartureDate", nativeQuery = true)
+    Stream<Flight> getFligths(Instant flightDepartureDate);
 }
