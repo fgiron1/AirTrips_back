@@ -84,14 +84,27 @@ public class FlightController {
         return new ResponseEntity<>(flights, status);
     }
 
-    /*@GetMapping
+    @GetMapping("/get")
     @CrossOrigin
-    public ResponseEntity<List<Flight>> getFlightsByAirportsAndTimestamp(@RequestParam(value = "departure_date") String departureDate,
+    public ResponseEntity<List<Flight>> getFlightsByAirportsAndTimestamp(@RequestParam(value = "departureDate") String departureDate,
                                                                          @RequestParam(value = "origin") String origin,
                                                                          @RequestParam(value= "destination") String destination){
+        HttpStatus status = null;
+        List<Flight> flights = null;
         // Casting query parameters to their corresponding types
+        Instant departureDateFinal = Instant.parse(departureDate);
+        UUID originFinal = UUID.fromString(origin);
+        UUID destinationFinal = UUID.fromString(destination);
 
-        return
-    }*/
+        try{
+            flights = service.filterByDateAndOrigin(departureDateFinal, originFinal, destinationFinal);
+            status = HttpStatus.OK;
+        } catch (Exception e) {
+            status = HttpStatus.INTERNAL_SERVER_ERROR;
+            return new ResponseEntity<>(null, status);
+        }
+
+        return new ResponseEntity<>(flights, status);
+    }
 
 }

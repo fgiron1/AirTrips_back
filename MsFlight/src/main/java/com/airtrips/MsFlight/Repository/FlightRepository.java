@@ -22,5 +22,5 @@ public interface FlightRepository extends JpaRepository<Flight, UUID> {
                                           @Param("destination") UUID destination);
 
     @Query(value ="SELECT * FROM find_flights_by_date(?1, ?2, ?3)", nativeQuery = true)
-    Stream<List<Flight>> filterByDateAndOrigin(Instant flightDepartureDate, UUID origin, UUID destination);
+    List<Flight> filterByDateAndOrigin(Instant flightDepartureDate, UUID origin, UUID destination);
 }

@@ -32,7 +32,7 @@ public class FlightService {
     @Transactional
     public List<Flight> filterByDateAndOrigin(Instant date, UUID origin, UUID destination){
         // BUSINESS LOGIC GOES HERE
-        return repo.filterByDateAndOrigin(date, origin, destination).iterator().next();
+        return repo.filterByDateAndOrigin(date, origin, destination);
     }
 
     @Transactional
