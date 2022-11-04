@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "Customers")
 public class Customer implements Serializable {
 
     @Id
@@ -15,14 +15,14 @@ public class Customer implements Serializable {
     @Column(nullable = false)
     @JsonIgnore
     private UUID id;
-    @Column(nullable = false)
-    private String first_name;
-    @Column(nullable = false)
+    @Column(name = "name", nullable = false)
+    private String name;
+    @Column(name = "last_name", nullable = false)
     private String last_name;
     @Column(nullable = false)
     private Integer age;
     @Column(nullable = false)
-    private String nacionality;
+    private String nationality;
     @Column(nullable = false)
     private String id_number;
 
@@ -30,21 +30,21 @@ public class Customer implements Serializable {
     private List<Ticket> ticketList;
 
     public Customer(){}
-    public Customer(UUID id, String first_name, String last_name, Integer age, String nacionality, String id_number, List<Ticket> ticketList) {
+    public Customer(UUID id, String name, String last_name, Integer age, String nationality, String id_number, List<Ticket> ticketList) {
         this.id = id;
-        this.first_name = first_name;
+        this.name = name;
         this.last_name = last_name;
         this.age = age;
-        this.nacionality = nacionality;
+        this.nationality = nationality;
         this.id_number = id_number;
         this.ticketList = ticketList;
     }
 
-    public Customer(String first_name, String last_name, Integer age, String nacionality, String id_number, List<Ticket> ticketList) {
-        this.first_name = first_name;
+    public Customer(String name, String last_name, Integer age, String nationality, String id_number, List<Ticket> ticketList) {
+        this.name = name;
         this.last_name = last_name;
         this.age = age;
-        this.nacionality = nacionality;
+        this.nationality = nationality;
         this.id_number = id_number;
         this.ticketList = ticketList;
     }
@@ -57,12 +57,12 @@ public class Customer implements Serializable {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getName() {
+        return name;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLast_name() {
@@ -81,12 +81,12 @@ public class Customer implements Serializable {
         this.age = age;
     }
 
-    public String getNacionality() {
-        return nacionality;
+    public String getNationality() {
+        return nationality;
     }
 
-    public void setNacionality(String nacionality) {
-        this.nacionality = nacionality;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public String getId_number() {
@@ -109,10 +109,10 @@ public class Customer implements Serializable {
     public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", first_name='" + first_name + '\'' +
+                ", first_name='" + name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", age=" + age +
-                ", nacionality='" + nacionality + '\'' +
+                ", nacionality='" + nationality + '\'' +
                 ", id_number='" + id_number + '\'' +
                 ", ticketList=" + ticketList +
                 '}';

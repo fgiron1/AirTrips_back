@@ -17,7 +17,7 @@ public interface FlightRepository extends JpaRepository<Flight, UUID> {
     List<Flight> filterByAirLine(@Param("airline") String airline);
 
     @Query(value ="SELECT * FROM find_flights_by_layover(:layover_number, :origin, :destination)", nativeQuery = true)
-    Stream<List<Flight>> filterByLayovers(@Param("layover_number") int layoverNumber,
+    List<Flight> filterByLayovers(@Param("layover_number") int layoverNumber,
                                           @Param("origin") UUID origin,
                                           @Param("destination") UUID destination);
 

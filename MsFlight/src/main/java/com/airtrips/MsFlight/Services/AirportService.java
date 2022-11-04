@@ -18,7 +18,7 @@ public class AirportService {
     }
 
     public List<Airport> getAllAirportsByCountry(String country) {
-        return repository.filterByCountry(country).iterator().next();
+        return repository.filterByCountry(country);
     }
 
     public Airport getAirportById(UUID id) {

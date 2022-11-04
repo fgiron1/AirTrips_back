@@ -12,8 +12,8 @@ import java.util.stream.Stream;
 @Repository
 public interface AirportRepository extends JpaRepository<Airport, UUID> {
 
-    @Query(value = "SELECT * FROM airport WHERE country=:country", nativeQuery = true)
-    Stream<List<Airport>> filterByCountry(String country);
+    @Query(value = "SELECT * FROM airports WHERE country=:country", nativeQuery = true)
+    List<Airport> filterByCountry(String country);
 
 
 }

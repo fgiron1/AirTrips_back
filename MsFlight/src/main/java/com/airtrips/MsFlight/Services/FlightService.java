@@ -26,7 +26,7 @@ public class FlightService {
     @Transactional
     public List<Flight> filterByLayovers(int layoverNumber, UUID origin, UUID destination){
         // BUSINESS LOGIC GOES HERE
-        return repo.filterByLayovers(layoverNumber, origin, destination).iterator().next();
+        return repo.filterByLayovers(layoverNumber, origin, destination);
     }
 
     @Transactional

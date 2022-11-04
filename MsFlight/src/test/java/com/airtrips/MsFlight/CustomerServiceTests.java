@@ -8,16 +8,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.util.Assert;
 
 import java.util.*;
+
+import static org.assertj.core.api.Fail.fail;
 
 @SpringBootTest
 public class CustomerServiceTests {
     @Autowired
     private CustomerService service;
     private static UUID VALID_ID = UUID.fromString("ad033055-57c1-4a3a-9701-7da830ef2e2a");
-    private static UUID INVALID_ID = UUID.fromString("00000000-0000-0000-0000-000000000000");
+    private static UUID INVALID_ID = UUID.fromString("ad033055-57c1-4a3a-9701-7da830ef2t1b");
     private static Customer c = new Customer("First", "Last", 12, "Spanish", INVALID_ID.toString(), null );
     private static Customer VALID_CUSTOMER = new Customer("Pedro", "Mendoza", 20, "Spain", "77854126D", new ArrayList<Ticket>());
     private static Customer INVALID_CUSTOMER = new Customer(null, null, null, null, null, null);
@@ -56,8 +59,12 @@ public class CustomerServiceTests {
 
     @Test
     void CreateCustomer_WorkAsExpected_WhenUsingInvalidData() {
-        Customer customer = service.createCustomer(INVALID_CUSTOMER);
+        try{
+            Customer customer = service.createCustomer(INVALID_CUSTOMER);
+        } catch (DataIntegrityViolationException e){
+            return;
+        }
 
-        Assert.isNull(customer, "Returned customer is null");
+        fail("Could create an invalid customer");
     }
 }

@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.UUID;
 
 @RestController
+@RequestMapping("/api/v1/flight")
 public class CustomerController {
 
     @Autowired
@@ -51,6 +52,13 @@ public class CustomerController {
 
 
     private boolean validateCustomer(Customer c){
-        return true;
+        boolean valid = true;
+        if(c.getName() == null ||
+                c.getNationality() == null ||
+                c.getAge() == null ||
+                c.getLast_name() == null) {
+            valid = false;
+        }
+        return valid;
     }
 }

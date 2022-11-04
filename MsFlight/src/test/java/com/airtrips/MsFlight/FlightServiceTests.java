@@ -11,8 +11,10 @@ import org.springframework.util.Assert;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -25,8 +27,8 @@ public class FlightServiceTests {
 
 
     private static UUID ID_WITH_ONE_LAYOVER = UUID.fromString("ebee5ba4-7d8d-464a-bb4c-2a92dbffcd40");
-    private static UUID ORIGIN_ONE_LAYOVER = UUID.fromString("");
-    private static UUID DESTINATION_ONE_LAYOVER = UUID.fromString("");
+    private static UUID ORIGIN_ONE_LAYOVER = UUID.fromString("8ecd3a95-d065-4ddc-88d8-129ff49e2172");
+    private static UUID DESTINATION_ONE_LAYOVER = UUID.fromString("cd7ff342-18a5-4d9b-bb82-b6060436fc18");
 
     private static UUID ID_WITH_TWO_LAYOVERS = UUID.fromString("fa5f65d9-8342-4373-920f-f1719a1355ea");
     private static UUID ORIGIN_TWO_LAYOVERS = UUID.fromString("99a5ef8c-4ce7-411f-8ad9-bfd6a1b96d7d");
@@ -38,29 +40,39 @@ public class FlightServiceTests {
 
 
     @Test
-    public void createFlight(Flight f){
+    public void readFlightById(){
+        Assert.isTrue(ID_WITH_ONE_LAYOVER.equals(
+                service.findFlightById(ID_WITH_ONE_LAYOVER).getId()),
+                "Could not find a matching flight record with the same id.");
     }
     @Test
-    public void readFlightById(UUID id){
-        Assert.isTrue(id.equals(service.findFlightById(id).getId()), "Could not find a matching flight record with the same id.");
-    }
-    @Test
-    public void filterByNonExistentAirline(String invalidAirline){
+    public void filterByNonExistentAirline(){
         List<Flight> flights = service.filterByAirline("Invalid Airlines");
         Assert.isTrue(flights.isEmpty(), "A flight was returned when it should not.");
     }
     @Test
-    public void filterByExistingAirline(String validAirline){
+    public void filterByExistingAirline(){
         List<Flight> flights = service.filterByAirline("Aliquam PC");
-        Assert.isTrue(flights.isEmpty(), "A flight could not be found with matching airline name.");
+        Assert.isTrue(!flights.isEmpty(), "A flight could not be found with matching airline name.");
     }
     @Test
-    public void filterByOneLayoverValidAirports(int layoverNumber, UUID origin, UUID destination){
-        Assert.isTrue(ID_WITH_ONE_LAYOVER
-                .equals(service.filterByLayovers(1, ORIGIN_ONE_LAYOVER, DESTINATION_ONE_LAYOVER)), "Could not find a flight with one layover!");
+    public void filterByOneLayoverValidAirports(){
+        List<Flight> flights =  service.filterByLayovers(1, ORIGIN_ONE_LAYOVER, DESTINATION_ONE_LAYOVER);
+        Flight possibleFlight = null;
+        try{
+            possibleFlight = service.findFlightById(ID_WITH_ONE_LAYOVER);
+        } catch (Exception e) {
+            fail("Specified flight does not even exist!");
+        }
+        List<UUID> flights_id = new ArrayList<UUID>();
+
+        for(Flight f : flights){
+            flights_id.add(f.getId());
+        }
+        Assert.isTrue(flights_id.contains(possibleFlight.getId()), "Specified flight does not have two layovers!");
     }
     @Test
-    public void filterByTwoLayoverValidAirports(int layoverNumber, UUID origin, UUID destination){
+    public void filterByTwoLayoverValidAirports(){
         List<Flight> flights =  service.filterByLayovers(2, ORIGIN_TWO_LAYOVERS, DESTINATION_TWO_LAYOVERS);
         Flight possibleFlight = null;
         try{
@@ -68,12 +80,17 @@ public class FlightServiceTests {
         } catch (Exception e) {
             fail("Specified flight does not even exist!");
         }
-        Assert.isTrue(flights.contains(possibleFlight), "Specified flight does not have one layover!");
+        List<UUID> flights_id = new ArrayList<UUID>();
+
+        for(Flight f : flights){
+            flights_id.add(f.getId());
+        }
+        Assert.isTrue(flights_id.contains(possibleFlight.getId()), "Specified flight does not have two layovers!");
 
     }
     @Test
     public void filterByPastDepartureDate(){
-        List<Flight> flights =  service.filterByDateAndOrigin(Instant.now().minus(1, ChronoUnit.YEARS), VALID_TRIP_ORIGIN, VALID_TRIP_DESTINATION);
+        List<Flight> flights =  service.filterByDateAndOrigin(Instant.now().minus(500, ChronoUnit.DAYS), VALID_TRIP_ORIGIN, VALID_TRIP_DESTINATION);
         boolean invalid = false;
 
         for(Flight f : flights){
@@ -94,7 +111,7 @@ public class FlightServiceTests {
         boolean invalid = false;
 
         for(Flight f : flights){
-            if(f.getDepartureDate().isAfter(Instant.now())){
+            if(f.getDepartureDate().equals(Instant.now())){
                 invalid = true;
                 break;
             };
@@ -107,7 +124,7 @@ public class FlightServiceTests {
     }
     @Test
     public void filterByFutureDepartureDate(){
-        List<Flight> flights =  service.filterByDateAndOrigin(Instant.now().plus(1, ChronoUnit.YEARS), VALID_TRIP_ORIGIN, VALID_TRIP_DESTINATION);
+        List<Flight> flights =  service.filterByDateAndOrigin(Instant.now().plus(500, ChronoUnit.DAYS), VALID_TRIP_ORIGIN, VALID_TRIP_DESTINATION);
         boolean invalid = false;
 
         for(Flight f : flights){

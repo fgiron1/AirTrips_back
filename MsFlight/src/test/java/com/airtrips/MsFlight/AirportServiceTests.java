@@ -3,13 +3,17 @@ package com.airtrips.MsFlight;
 import com.airtrips.MsFlight.Services.AirportService;
 import com.airtrips.MsFlight.Models.Airport;
 import com.airtrips.MsFlight.Services.AirportService;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.fail;
 
 @SpringBootTest
 public class AirportServiceTests {
@@ -38,9 +42,12 @@ public class AirportServiceTests {
 
     @Test
     void GetAirport_ReturnsNull_WhenUsingInvalidId() {
-        Airport airport = service.getAirportById(INVALID_ID);
-
-        Assert.isNull(airport, "The returned airport is null");
+        try{
+            Airport airport = service.getAirportById(INVALID_ID);
+        } catch (NoSuchElementException e){
+            return;
+        }
+        fail("An invalid ID returned a record");
     }
 
     @Test
@@ -51,9 +58,17 @@ public class AirportServiceTests {
     }
 
     @Test
+    @Transactional
     void GetAirportByCountry_ReturnsAnEmptyList_WhenUsingNonExistingCountry() {
-        List<Airport> airports = service.getAllAirportsByCountry("");
-
-        Assert.isTrue(airports.size() == 0, "The returned list of airports is empty when using non existing country");
+        List<Airport> airports;
+        try {
+            airports = service.getAllAirportsByCountry("");
+        } catch (NoSuchElementException e) {
+            return;
+        }
+        if (airports.size() == 0){
+            return;
+        }
+            fail("The returned list of airports is empty when using non existing country");
     }
 }
