@@ -32,27 +32,23 @@ public class GatewayApplication {
 		return builder.routes()
 				// Circuit breakers specified for each microservice in any version of the API.
 				.route(p -> p
-						.path("/api/**")
+						.path("/api/v1/flight/**")
 						.filters(f -> f.circuitBreaker(config -> config
 										.setName("global_flights")
 										.setFallbackUri("forward:/fallback")))
-						.uri("http://localhost:8081"))
+						.uri("http://localhost:8080"))
 				.route(p -> p
-						.path("/api/**")
+						.path("/api/v1/**")
 						.filters(f -> f.circuitBreaker(config -> config
 								.setName("global_prices")
 								.setFallbackUri("forward:/fallback")))
-						.uri("http://localhost:8082"))
+						.uri("http://localhost:8081"))
 				.route(p -> p
 						.path("/api/**")
 						.filters(f -> f.circuitBreaker(config -> config
 								.setName("global_metrics")
 								.setFallbackUri("forward:/fallback")))
-						.uri("http://localhost:8083"))
-				// FLIGHT MICROSERVICE
-				.route(p -> p
-						.path("api/v1/**")
-						.uri("http://localhost:8081"))
+						.uri("http://localhost:8082"))
 				.build();
 
 	}
