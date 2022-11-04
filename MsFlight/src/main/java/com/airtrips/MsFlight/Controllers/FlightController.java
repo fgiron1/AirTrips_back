@@ -22,6 +22,7 @@ public class FlightController {
     public FlightController(){}
 
     @GetMapping("/filter")
+    @CrossOrigin
     public ResponseEntity<List<Flight>> filterByAirline(@RequestParam(required = false, value="airline") String airline,
                                                         @RequestParam(required = false, value="layout_number") String layout_number,
                                                         @RequestParam(required = false, value="origin") String origin,
@@ -53,6 +54,7 @@ public class FlightController {
     }*/
 
     @GetMapping("/{id}")
+    @CrossOrigin
     public ResponseEntity<Flight> getFlightById(@PathVariable String id){
         Flight f = null;
         HttpStatus status = null;
@@ -67,6 +69,7 @@ public class FlightController {
     }
 
     @GetMapping("/")
+    @CrossOrigin
     public ResponseEntity<List<Flight>> getAllFlights(){
         List<Flight> flights = null;
         HttpStatus status = null;

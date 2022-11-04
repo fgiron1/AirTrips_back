@@ -21,6 +21,7 @@ public class AirportController {
     AirportService service;
 
     @GetMapping("/airport")
+    @CrossOrigin
     public ResponseEntity<List<Airport>> getAllAirports(){
         List<Airport> airports = null;
         HttpStatus status = null;
@@ -35,6 +36,7 @@ public class AirportController {
     }
 
     @GetMapping("/airport/{id}")
+    @CrossOrigin
     public ResponseEntity<Airport> getAirportsById(@PathVariable String id){
         Airport a = null;
         HttpStatus status = null;
