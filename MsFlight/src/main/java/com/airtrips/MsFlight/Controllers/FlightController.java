@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.function.EntityResponse;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
@@ -82,5 +83,15 @@ public class FlightController {
 
         return new ResponseEntity<>(flights, status);
     }
+
+    /*@GetMapping
+    @CrossOrigin
+    public ResponseEntity<List<Flight>> getFlightsByAirportsAndTimestamp(@RequestParam(value = "departure_date") String departureDate,
+                                                                         @RequestParam(value = "origin") String origin,
+                                                                         @RequestParam(value= "destination") String destination){
+        // Casting query parameters to their corresponding types
+
+        return
+    }*/
 
 }

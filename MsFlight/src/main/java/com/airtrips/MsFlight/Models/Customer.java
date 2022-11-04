@@ -1,4 +1,5 @@
 package com.airtrips.MsFlight.Models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -12,6 +13,7 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
+    @JsonIgnore
     private UUID id;
     @Column(nullable = false)
     private String first_name;
