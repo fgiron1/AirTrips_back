@@ -20,7 +20,7 @@ public class FlightService {
     @Transactional
     public List<Flight> filterByAirline(String airline){
         // BUSINESS LOGIC GOES HERE
-        return repo.filterByAirLine(airline).iterator().next();
+        return repo.filterByAirLine(airline);
     }
 
     @Transactional

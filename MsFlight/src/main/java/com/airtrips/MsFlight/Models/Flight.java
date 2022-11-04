@@ -1,7 +1,10 @@
 package com.airtrips.MsFlight.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.Type;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -14,18 +17,18 @@ public class Flight implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "uuid")
     private UUID id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "origin_id", nullable = false)
     private Airport origin_id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "destination_id", nullable = false)
     private Airport destination_id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "layover_id", referencedColumnName = "id", nullable = true)
     private Flight layover_id;
     @Column(name = "airline_name", nullable = false)
@@ -42,10 +45,12 @@ public class Flight implements Serializable {
     private Integer actualCapacity;
 
     @OneToMany(mappedBy = "flight_id", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Ticket> ticketList;
 
 
     @OneToMany(mappedBy = "layover_id", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Flight> layoverList;
 
     public Flight(){}

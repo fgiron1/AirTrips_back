@@ -13,7 +13,7 @@ public class Airport implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "uuid")
     private UUID id;
     @Column(nullable = false)
     private String name;

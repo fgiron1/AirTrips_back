@@ -29,7 +29,7 @@ public class AirportServiceTests {
 
     @Test
     void GetAirport_ReturnsTheCorrectAirport_WhenUsingValidId() {
-        Airport airport = service.getAirport(VALID_ID);
+        Airport airport = service.getAirportById(VALID_ID);
 
         Assert.notNull(airport, "Assert that the returned airport is not null");
         Assert.isTrue(airport.getId().equals(VALID_AIRPORT.getId()), "Assert that the returned airport have the correct id");
@@ -38,7 +38,7 @@ public class AirportServiceTests {
 
     @Test
     void GetAirport_ReturnsNull_WhenUsingInvalidId() {
-        Airport airport = service.getAirport(INVALID_ID);
+        Airport airport = service.getAirportById(INVALID_ID);
 
         Assert.isNull(airport, "The returned airport is null");
     }

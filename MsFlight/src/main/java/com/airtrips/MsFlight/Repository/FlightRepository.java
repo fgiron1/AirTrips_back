@@ -13,9 +13,8 @@ import java.util.stream.Stream;
 
 @Repository
 public interface FlightRepository extends JpaRepository<Flight, UUID> {
-
-    @Query(value="SELECT * FROM flights WHERE airline_name=:airline", nativeQuery = true)
-    Stream<List<Flight>> filterByAirLine(@Param("airline") String airline);
+    @Query(value="SELECT * FROM Flights WHERE airline_name=:airline", nativeQuery = true)
+    List<Flight> filterByAirLine(@Param("airline") String airline);
 
     @Query(value ="SELECT * FROM find_flights_by_layover(:layover_number, :origin, :destination)", nativeQuery = true)
     Stream<List<Flight>> filterByLayovers(@Param("layover_number") int layoverNumber,

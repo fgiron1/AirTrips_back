@@ -39,16 +39,21 @@ public class FlightServiceTests {
 
     @Test
     public void createFlight(Flight f){
-
     }
     @Test
-    public void readFlight(Flight f){}
+    public void readFlightById(UUID id){
+        Assert.isTrue(id.equals(service.findFlightById(id).getId()), "Could not find a matching flight record with the same id.");
+    }
     @Test
-    public void readFlightById(UUID id){}
+    public void filterByNonExistentAirline(String invalidAirline){
+        List<Flight> flights = service.filterByAirline("Invalid Airlines");
+        Assert.isTrue(flights.isEmpty(), "A flight was returned when it should not.");
+    }
     @Test
-    public void filterByNonExistentAirline(String invalidAirline){}
-    @Test
-    public void filterByExistingAirline(String validAirline){}
+    public void filterByExistingAirline(String validAirline){
+        List<Flight> flights = service.filterByAirline("Aliquam PC");
+        Assert.isTrue(flights.isEmpty(), "A flight could not be found with matching airline name.");
+    }
     @Test
     public void filterByOneLayoverValidAirports(int layoverNumber, UUID origin, UUID destination){
         Assert.isTrue(ID_WITH_ONE_LAYOVER
@@ -69,17 +74,37 @@ public class FlightServiceTests {
     @Test
     public void filterByPastDepartureDate(){
         List<Flight> flights =  service.filterByDateAndOrigin(Instant.now().minus(1, ChronoUnit.YEARS), VALID_TRIP_ORIGIN, VALID_TRIP_DESTINATION);
-        Flight possibleFlight = null;
-        try{
-            possibleFlight = service.findFlightById(ID_WITH_TWO_LAYOVERS);
-        } catch (Exception e) {
-            fail("Specified flight does not even exist!");
-        }
-        Assert.isTrue(flights.contains(possibleFlight), "Specified flight does not have one layover!");
+        boolean invalid = false;
 
+        for(Flight f : flights){
+            if(f.getDepartureDate().isAfter(Instant.now())){
+                invalid = true;
+                break;
+            };
+        }
+        if(invalid){
+            fail("There was at least one flight with future departure date.");
+        } else {
+            return;
+        }
     }
     @Test
-    public void filterByPresentDepartureDate(){}
+    public void filterByPresentDepartureDate(){
+        List<Flight> flights =  service.filterByDateAndOrigin(Instant.now(), VALID_TRIP_ORIGIN, VALID_TRIP_DESTINATION);
+        boolean invalid = false;
+
+        for(Flight f : flights){
+            if(f.getDepartureDate().isAfter(Instant.now())){
+                invalid = true;
+                break;
+            };
+        }
+        if(invalid){
+            fail("There was at least one flight with future departure date.");
+        } else {
+            return;
+        }
+    }
     @Test
     public void filterByFutureDepartureDate(){}
     @Test
