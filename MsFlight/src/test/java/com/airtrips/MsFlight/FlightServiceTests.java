@@ -106,7 +106,20 @@ public class FlightServiceTests {
         }
     }
     @Test
-    public void filterByFutureDepartureDate(){}
-    @Test
-    public void filterByInvalidDate(){}
+    public void filterByFutureDepartureDate(){
+        List<Flight> flights =  service.filterByDateAndOrigin(Instant.now().plus(1, ChronoUnit.YEARS), VALID_TRIP_ORIGIN, VALID_TRIP_DESTINATION);
+        boolean invalid = false;
+
+        for(Flight f : flights){
+            if(f.getDepartureDate().isBefore(Instant.now())){
+                invalid = true;
+                break;
+            };
+        }
+        if(invalid){
+            fail("There was at least one flight with past departure date.");
+        } else {
+            return;
+        }
+    }
 }
